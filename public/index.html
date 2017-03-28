@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comments!</title>
+<title>D&D Combat Tracker</title>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="javascripts/comments.js"></script>
 <link type="text/css" rel="stylesheet" href="stylesheets/style.css">
-
+<link rel="SHORTCUT ICON" href="images/nat20.png">
 </head>
 
 <body>
-<h1>Join the Conversation!</h1>
-<form id="commentForm" action="">
+<h1>Welcome to the D&D Combat Tracker!</h1>
+<form id="CharacterForm" action="">
 <label for="name">Name: </label><input type="text" id="name" placeholder="Name"><br>
-<label for="comment">comment: </label><input type="text" id="comment" placeholder="Comment"><br>
+<label for="race">Race</label><input type="text" id="race" placeholder="Race"><br>
+<label for="Class">Class</label><input type="text" id="class" placeholder="Class"><br>
 </form>
 
-<button id="postComment">Post Comment</button>
-<button id="getComments">Get Comments</button>
-<button id="deleteComments">Delete All</button>
-<div id="json"></div>
-<div id="done"></div>
-<div id="comments"></div>
+<button id="newCharacter">Add Character to Database</button>
+<div id="Characters"></div>
 </body>
 </html>
