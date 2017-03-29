@@ -5,7 +5,7 @@ DungeonApp.controller('CharacterCreation', [
     $scope.characters = [];
     $scope.addCharacter = function() {
 	console.log("Adding Character");
-      if($scope.level>=1 && $scope.hp>=1) { 
+      if($scope.level>=1 && $scope.hp>=1) {
         var newCharacter = {name:$scope.name,race:$scope.race,ddclass:$scope.ddclass,level:$scope.level,hp:$scope.hp};
         $scope.name='';
         $scope.race='';
@@ -13,12 +13,14 @@ DungeonApp.controller('CharacterCreation', [
         $scope.level=0;
         $scope.hp=0;
         $scope.error='';
-	$scope.characters.push(newCharacter);
+	      $scope.characters.push(newCharacter);
+
+        //DO AJAX CALL HERE TO PUSH NEW CHARACTER TO DATABASE
+
     	}
       else{
-	$scope.error="Please enter a positive number for HP and Level.<br>";
-	}
+	      $scope.error="Please enter a positive number for HP and Level.<br>";
+	    }
     }
   }
  ]);
-
