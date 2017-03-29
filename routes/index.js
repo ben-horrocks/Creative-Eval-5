@@ -64,7 +64,7 @@ router.get('/monsters', function() {
     if (err){ return next(err)};
     res.json(monsters);
   });
-}
+});
 
 //UPDATE MONSTER INFORMATION
 /*
