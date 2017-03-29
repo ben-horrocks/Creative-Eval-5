@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html ng-app="DungeonApp">
+<html>
 <head>
 <title>D&D Combat Tracker</title>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
 <script src="javascripts/DungeonMaster.js"></script>
 <link type="text/css" rel="stylesheet" href="stylesheets/style.css">
 <link rel="SHORTCUT ICON" href="images/nat20.png">
 </head>
 
-<body>
+<body  ng-app="DungeonApp" ng-controller="CharacterCreation">
 <h1>Welcome to the D&D Combat Tracker!</h1>
-<form id="CharacterForm" action="">
-<label for="name">Name: </label><input type="text" id="name" placeholder="Name"><br>
-<label for="race">Race: </label><input type="text" id="race" placeholder="Race"><br>
-<label for="class">Class: </label><input type="text" id="class" placeholder="Class"><br>
-<label for="hp">HitPoints: </label><input type="number" id="hp" placeholder="Hit Points"><br>
+<form ng-submit="addCharacter()"  id="CharacterForm">
+<label for="name">Name: </label><input type="text" ng-model="name" placeholder="Name"><br>
+<label for="race">Race: </label><input type="text" ng-model="race" placeholder="Race"><br>
+<label for="ddclass">Class: </label><input type="text" ng-model="ddclass" placeholder="Class"><br>
+<label for="level">Level: </label><input type="number" min="1" step="1"  ng-model="level" placeholder="Level"><br>
+<label for="hp">HitPoints: </label><input type="number" min="1" step="1" ng-model="hp" placeholder="Hit Points"><br>
+<button id="newCharacter" type="submit">Add Character to Database</button>
 </form>
 
-<button id="newCharacter">Add Character to Database</button>
-<div id="Characters"></div>
+<div ng-model="error"></div>
+<div id="Characters" ng-repeat = "character in characters | orderBy:'name'">
+ {{character.name}}: {{character.race}} {{character.ddclass}} {{character.level}}
+</div>
 </body>
 </html>
