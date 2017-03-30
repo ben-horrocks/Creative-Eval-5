@@ -6,6 +6,12 @@ var CharacterSchema = new mongoose.Schema({
     ddclass: String,
     level: Number,
     hp: Number,
+    Str: Number,
+    Dex: Number,
+    Con: Number,
+    Int: Number,
+    Wis: Number,
+    Cha: Number,
 });
 var MonsterSchema = new mongoose.Schema({
     type: String,
