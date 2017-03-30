@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
 //CREATE NEW PLAYER
 router.post('/characters', function(req, res) {
   console.log('call to post new character');
+  console.log(req.body);
   var Character = new character(req.body);
   Character.save(function(err, character) {
     if(err){return next(err)};

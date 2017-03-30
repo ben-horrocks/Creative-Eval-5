@@ -13,7 +13,7 @@ DungeonApp.controller('CharacterCreation', [
       $scope.hp=0;
       $scope.error='';
       $http.post('/characters',newCharacter).success(function() {
-	console.log("Posting new Character");
+	console.log("New Character Posted Successfully");
 	$scope.characters.push(newCharacter);  
     	});
 	    console.log("Adding Character");
@@ -39,9 +39,4 @@ DungeonApp.controller('CharacterCreation', [
       console.log("Fetching Character from Database");
     }
   }
-    $scope.getCharacters = function() {
-      console.log("Getting Characters from database");
-      
-    }
-
-    $scope.newMonster = function() {
+]);
