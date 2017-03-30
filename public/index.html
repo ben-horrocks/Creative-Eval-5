@@ -10,19 +10,50 @@
 </head>
 
 <body  ng-app="DungeonApp" ng-controller="CharacterCreation">
-<h1>Welcome to the D&D Combat Tracker!</h1>
-<form ng-submit="addCharacter()"  id="CharacterForm">
-<label for="name">Name: </label><input type="text" ng-model="name" placeholder="Name"><br>
-<label for="race">Race: </label><input type="text" ng-model="race" placeholder="Race"><br>
-<label for="ddclass">Class: </label><input type="text" ng-model="ddclass" placeholder="Class"><br>
-<label for="level">Level: </label><input type="number" min="1" step="1"  ng-model="level" placeholder="Level"><br>
-<label for="hp">HitPoints: </label><input type="number" min="1" step="1" ng-model="hp" placeholder="Hit Points"><br>
-<button id="newCharacter" type="submit">Add Character to Database</button>
-</form>
 
-<div ng-model="error"></div>
-<div id="Characters" ng-repeat = "character in characters | orderBy:'name'">
- {{character.name}}: {{character.race}} {{character.ddclass}} {{character.level}}
-</div>
+  <h1 id="title">Welcome to the D&D Combat Tracker!</h1>
+
+  <div id="character-div">
+    <h3>Add a new Player Here</h3>
+    <form ng-submit="addCharacter()"  id="CharacterForm">
+        <label for="name">Name: </label><input type="text" ng-model="name" placeholder="Name"><br>
+        <label for="race">Race: </label><input type="text" ng-model="race" placeholder="Race"><br>
+        <label for="ddclass">Class: </label><input type="text" ng-model="ddclass" placeholder="Class"><br>
+        <label for="level">Level: </label><input type="number" min="1" step="1"  ng-model="level" placeholder="Level"><br>
+        <label for="hp">HitPoints: </label><input type="number" min="1" step="1" ng-model="hp" placeholder="Hit Points"><br>
+        <button id="newCharacter" type="submit">Add Character to Database</button>
+    </form>
+
+    <div ng-model="error"></div>
+
+    <div id="Characters" ng-repeat = "character in characters | orderBy:'name'">
+     {{character.name}}: {{character.race}} {{character.ddclass}} {{character.level}}
+    </div>
+  </div>
+
+  <div id="monster-div">
+    <h3>Add a new Monster Here</h3>
+    <form ng-submit="addMonster()"  id="MonsterForm">
+        <label for="name">Name: </label><input type="text" ng-model="name" placeholder="Name"><br>
+        <label for="race">Race: </label><input type="text" ng-model="race" placeholder="Race"><br>
+        <label for="ddclass">Class: </label><input type="text" ng-model="ddclass" placeholder="Class"><br>
+        <label for="level">Level: </label><input type="number" min="1" step="1"  ng-model="level" placeholder="Level"><br>
+        <label for="hp">HitPoints: </label><input type="number" min="1" step="1" ng-model="hp" placeholder="Hit Points"><br>
+        <button id="newMonster" type="submit">Add Monster to Database</button>
+    </form>
+
+    <div ng-model="error"></div>
+
+    <div id="Monsters" ng-repeat = "character in characters | orderBy:'name'">
+     {{character.name}}: {{character.race}} {{character.ddclass}} {{character.level}}
+    </div>
+  </div>
+
+  <div id="fight-div">
+    <form>
+      <button type="submit">RUN FIGHT</button>
+    </form>
+  </div>
+
 </body>
 </html>

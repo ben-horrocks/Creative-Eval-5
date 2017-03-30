@@ -5,11 +5,24 @@ body {
   background-size:cover;
 }
 
-.textFormat {
-  color: white;
+#title {
+  color: rgb(150,48,32);
+  text-align: center;
+  background-color: black;
+  width:100%;
+  height: 50px;
+  padding-top: 10px;
+  margin: 0px;
 }
 
-#title {
+/* CHARACTER DIV */
+
+#character-div {
+  padding-top: 100px;
+  display: inline-block;
+}
+
+#CharacterForm label {
   color: white;
 }
 
@@ -33,14 +46,64 @@ body {
   padding-right: 5px;
 }
 
+#CharacterForm input {
+  width: 150px;
+}
+
 #CharacterForm button {
   margin-top: 10px;
   margin-left: 40px;
 }
 
-#CharacterForm input {
+/* MONSTER DIV */
+
+#monster-div {
+  padding-top: 100px;
+  display: inline-block;
+  float: right;
+}
+
+#MonsterForm label {
+  color: white;
+}
+
+#MonsterForm label:nth-child(1) {
+  padding-right: 27px;
+}
+
+#MonsterForm label:nth-child(4) {
+  padding-right: 35px;
+}
+
+#MonsterForm label:nth-child(7) {
+  padding-right: 30px;
+}
+
+#MonsterForm label:nth-child(10) {
+  padding-right: 32px
+}
+
+#MonsterForm label:nth-child(13) {
+  padding-right: 5px;
+}
+
+#MonsterForm input {
   width: 150px;
 }
+
+#MonsterForm button {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+/*FIGHT DIV*/
+
+#fight-div {
+  text-align: center;
+  margin-top: 150px;
+}
+
+/* OTHER */
 
 a {
   color: #00B7FF;
