@@ -3,7 +3,43 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image:url(../images/wallpaper.jpg);
   background-size:cover;
-  text-align: center;
+}
+
+.textFormat {
+  color: white;
+}
+
+#title {
+  color: white;
+}
+
+#CharacterForm label:nth-child(1) {
+  padding-right: 27px;
+}
+
+#CharacterForm label:nth-child(4) {
+  padding-right: 35px;
+}
+
+#CharacterForm label:nth-child(7) {
+  padding-right: 30px;
+}
+
+#CharacterForm label:nth-child(10) {
+  padding-right: 32px
+}
+
+#CharacterForm label:nth-child(13) {
+  padding-right: 5px;
+}
+
+#CharacterForm button {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+#CharacterForm input {
+  width: 150px;
 }
 
 a {
