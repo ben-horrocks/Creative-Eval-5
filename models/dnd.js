@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var CharacterSchema = new mongoose.Schema({
+    type: String,
     name: String,
     race: String,
     ddclass: String,
@@ -7,6 +8,7 @@ var CharacterSchema = new mongoose.Schema({
     hp: Number,
 });
 var MonsterSchema = new mongoose.Schema({
+    type: String,
     name: String,
     level: String,
     hp: Number,

@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
 });
 
 
-//CREATE NEW CHARACTER
-router.post('/characters', function() {
+//CREATE NEW PLAYER
+router.post('/characters', function(req, res) {
   console.log('call to post new character');
   var Character = new character(req.body);
   Character.save(function(err, character) {
@@ -20,11 +20,20 @@ router.post('/characters', function() {
   });
 });
 
+//CREATE NEW MONSTER
+router.post('/monsters', function(req, res) {
+  console.log('call to post new character');
+  var Monster = new monster(req.body);
+  Character.save(function(err, monster) {
+    if(err){return next(err)};
+    res.json(monster);
+  });
+});
 
 //GET CHARACTERS
-router.get('/characters', function() {
+router.get('/characters', function(req, res) {
   console.log('call to get characters');
-  character.find(function(err, characters) {
+  character.find({}, function(err, characters) {
     if (err){ return next(err)};
     res.json(characters);
   });
@@ -42,41 +51,6 @@ router.put('/characters', function() {
 /*
 router.delete('/characters', function() {
   console.log('call to delete character')
-}
-*/
-
-//- - - - - - - - - - - - - - - - - - - - - - - - - -
-
-//CREATE NEW MONSTER
-router.post('/monsters', function() {
-  console.log('call to post new monster');
-  var Monster = new monster(req.body);
-  Monster.save(function(err, monster) {
-    if(err){ return next(err) };
-    res.json(monster);
-  });
-});
-
-//GET MONSTERS
-router.get('/monsters', function() {
-  console.log('call to get monsters');
-  monster.find(function(err, monsters) {
-    if (err){ return next(err)};
-    res.json(monsters);
-  });
-});
-
-//UPDATE MONSTER INFORMATION
-/*
-router.put('/monsters', function() {
-
-}
-*/
-
-//REMOVE MONSTERS
-/*
-router.delete('/monsters', function() {
-
 }
 */
 
