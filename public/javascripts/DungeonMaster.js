@@ -4,6 +4,18 @@ DungeonApp.controller('CharacterCreation', [
   function($scope,$http) {
     $scope.characters = [];
     $scope.addCharacter = function() {
+      console.log("Adding Character");
+      var newCharacter = {name:$scope.name,race:$scope.race,ddclass:$scope.ddclass,level:$scope.level,hp:$scope.hp,type:"Player"};
+      $scope.name='';
+      $scope.race='';
+      $scope.ddclass='';
+      $scope.level=0;
+      $scope.hp=0;
+      $scope.error='';
+      $http.post('/characters',newCharacter).success(function() {
+	console.log("Posting new Character");
+	$scope.characters.push(newCharacter);  
+    	});
 	    console.log("Adding Character");
       if($scope.level>=1 && $scope.hp>=1) {
         var newCharacter = {name:$scope.name,race:$scope.race,ddclass:$scope.ddclass,level:$scope.level,hp:$scope.hp};
@@ -27,4 +39,9 @@ DungeonApp.controller('CharacterCreation', [
       console.log("Fetching Character from Database");
     }
   }
- ]);
+    $scope.getCharacters = function() {
+      console.log("Getting Characters from database");
+      
+    }
+
+    $scope.newMonster = function() {
